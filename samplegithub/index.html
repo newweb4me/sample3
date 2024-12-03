@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EastSoko - Online Store</title>
+  <style>
+    /* Reset */
+    body, h1, h2, h3, p, ul, li, a, button {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #ff6f61;
+      color: #fff;
+    }
+
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    header nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    header nav ul li {
+      margin: 0 15px;
+    }
+
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    header .cart a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .banner {
+      text-align: center;
+      padding: 100px 20px;
+      background: url('banner.jpg') no-repeat center center/cover;
+      color: #fff;
+    }
+
+    .banner h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .banner button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background: #fff;
+      color: #ff6f61;
+      border: none;
+      cursor: pointer;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .product button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #ff6f61;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 0;
+      background: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">EastSoko</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="cart">
+      <a href="#cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="https://img.freepik.com/free-vector/flat-horizontal-banner-template-black-friday-sale_23-2150852978.jpg?semt=ais_hybrid" id="home">
+    <h1>Welcome to EastSoko</h1>
+    <p>Your one-stop shop for quality products.</p>
+    <button onclick="scrollToProducts()">Shop Now</button>
+  </section>
+
+  <!-- Product Section -->
+  <section id="products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://img.freepik.com/free-vector/flat-horizontal-banner-template-black-friday-sale_23-2150852978.jpg?semt=ais_hybrid" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>$25.00</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://img.freepik.com/free-vector/flat-horizontal-banner-template-black-friday-sale_23-2150852978.jpg?semt=ais_hybrid" alt="Product 2">
+        <h3>Product 2</h3>
+        <p>$40.00</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://img.freepik.com/free-vector/flat-horizontal-banner-template-black-friday-sale_23-2150852978.jpg?semt=ais_hybrid" alt="Product 3">
+        <h3>Product 3</h3>
+        <p>$35.00</p>
+        <button onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 EastSoko. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Script for the EastSoko eCommerce Website
+    let cartCount = 0;
+
+    function addToCart() {
+      cartCount++;
+      document.getElementById("cart-count").textContent = cartCount;
+    }
+
+    function scrollToProducts() {
+      document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
